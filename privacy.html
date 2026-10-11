@@ -5,21 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Lovena</title>
 <meta name="color-scheme" content="light dark">
-<link rel="canonical" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/privacy.html">
-<link rel="alternate" hreflang="en" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/en/privacy.html">
-<link rel="alternate" hreflang="tr" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/tr/privacy.html">
-<link rel="alternate" hreflang="x-default" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/privacy.html">
+<link rel="canonical" href="https://lovenaapp.com/privacy.html">
+<link rel="alternate" hreflang="de" href="https://lovenaapp.com/de/privacy.html">
+<link rel="alternate" hreflang="en" href="https://lovenaapp.com/en/privacy.html">
+<link rel="alternate" hreflang="es" href="https://lovenaapp.com/es/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://lovenaapp.com/fr/privacy.html">
+<link rel="alternate" hreflang="it" href="https://lovenaapp.com/it/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://lovenaapp.com/pt-BR/privacy.html">
+<link rel="alternate" hreflang="tr" href="https://lovenaapp.com/tr/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://lovenaapp.com/ko/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://lovenaapp.com/ja/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://lovenaapp.com/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://lovenaapp.com/privacy.html">
 <link rel="stylesheet" href="style.css">
 <script>
 (function () {
   try {
     if (location.search.indexOf('lang=') !== -1) return;
-    var supported = ["tr"];
+    var supported = ["de","es","fr","it","pt-BR","tr","ko","ja","zh-Hant"];
+    var lower = supported.map(function (c) { return c.toLowerCase(); });
     var wanted = (navigator.languages || [navigator.language || '']);
     for (var i = 0; i < wanted.length; i++) {
-      var code = String(wanted[i]).toLowerCase().split('-')[0];
-      if (code === "en") return;
-      if (supported.indexOf(code) !== -1) { location.replace(code + '/privacy.html'); return; }
+      // Same order as the app's matchLanguage: full tag, then with trailing
+      // subtags dropped (zh-Hant-TW → zh-Hant, pt-BR), then the base language,
+      // then another variant of it (pt-PT → pt-BR, zh-Hans → zh-Hant).
+      var parts = String(wanted[i]).toLowerCase().split('-');
+      if (parts[0] === "en") return;
+      var tries = [];
+      for (var n = parts.length; n >= 1; n--) tries.push(parts.slice(0, n).join('-'));
+      if (parts[0] === 'zh' && /^(tw|hk|mo)$/.test(parts[1] || '')) tries.splice(1, 0, 'zh-hant');
+      if (parts[0] === 'pt') tries.push('pt-br');
+      if (parts[0] === 'zh') tries.push('zh-hant');
+      for (var j = 0; j < tries.length; j++) {
+        var at = lower.indexOf(tries[j]);
+        if (at !== -1) { location.replace(supported[at] + '/privacy.html'); return; }
+      }
     }
   } catch (e) {}
 })();
@@ -29,10 +49,10 @@
 <main>
 <header>
   <a class="brand" href="en/index.html">Lovena</a>
-  <nav class="langs" aria-label="Language"><a href="en/privacy.html" hreflang="en" aria-current="page">English</a><a href="tr/privacy.html" hreflang="tr">Türkçe</a></nav>
+  <nav class="langs" aria-label="Language"><a href="de/privacy.html" hreflang="de">Deutsch</a><a href="en/privacy.html" hreflang="en" aria-current="page">English</a><a href="es/privacy.html" hreflang="es">Español</a><a href="fr/privacy.html" hreflang="fr">Français</a><a href="it/privacy.html" hreflang="it">Italiano</a><a href="pt-BR/privacy.html" hreflang="pt-BR">Português (Brasil)</a><a href="tr/privacy.html" hreflang="tr">Türkçe</a><a href="ko/privacy.html" hreflang="ko">한국어</a><a href="ja/privacy.html" hreflang="ja">日本語</a><a href="zh-Hant/privacy.html" hreflang="zh-Hant">繁體中文</a></nav>
 </header>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 27 September 2026</p>
+<p class="updated">Last updated: 1 October 2026</p>
 <p>Lovena is a private space for two people. This policy explains what we store, why, who else is involved, and what you can do about it. We have tried to keep it plain.</p>
 <section>
 <h2>Who we are</h2>
@@ -40,12 +60,14 @@
 </section>
 <section>
 <h2>What we store</h2>
-<p><strong>Your account:</strong> your email address and your password. The password is handled by our authentication provider and is stored only as a one-way hash; we never see it.</p>
+<p><strong>Your account:</strong> your email address and your password. The password is handled by our authentication provider and is stored only as a one-way hash; we never see it. If you sign in with Apple or Google, no password is created: we receive your email address (with Apple, possibly the private relay address you chose), your name and an account identifier from that service. For Sign in with Apple we also keep a token Apple issues so we can revoke the Apple connection when you delete your account; on deletion it is revoked at Apple and removed from our systems.</p>
 <p><strong>Your profile:</strong> the name you choose, a profile photo if you add one, and the dates you enter, such as birthdays and your anniversary.</p>
 <p><strong>What you create together:</strong> notes, photos and albums, instant photos, voice notes, drawings, time capsules, answers to daily questions and quizzes, game moves, your garden, dreams and plans, mood check-ins, special days, visits, and the places you pin on the map. This is the heart of the app, and it is shared only with your partner.</p>
 <p><strong>Technical data:</strong> a push notification token for your device, your device’s language and time zone, and the app version. These are used to deliver notifications at the right time and in the right language.</p>
 <p><strong>Subscription status:</strong> if you buy Lovena Plus or Gold, which plan you are on and when it renews. Payment itself is handled entirely by Apple or Google; we never see your card or payment details.</p>
-<p>We do <strong>not</strong> use analytics or advertising SDKs, we do not track you across other apps or websites, and we do not build advertising profiles.</p>
+<p><strong>Days of use:</strong> which days you open the app. This is used to work out your garden companion’s bond and to send gentle reminders when one of you hasn’t stopped by for a while — so if you stay away for a few days, your partner may get a notification suggesting they leave you a note. Only that you opened the app on a day is kept, not what you did.</p>
+<p><strong>Invites:</strong> your couple’s friend invite code and how many couples joined with it (not who they are).</p>
+<p><strong>Anonymous counts:</strong> the optional answer you give when leaving a subscription is counted anonymously, as a number only, not tied to who you are. We don’t use analytics or advertising tools (SDKs), don’t track you across other apps and websites, and don’t build advertising profiles.</p>
 </section>
 <section>
 <h2>Location</h2>
@@ -74,12 +96,13 @@
 </section>
 <section>
 <h2>Data kept on your phone</h2>
-<p>To work smoothly, the app keeps a cache of your recent content and your sign-in session on your device, and the home screen widget stores a few dates it needs to show your counters. Uninstalling the app removes them.</p>
+<p>To keep the app quick, a cache of your recent content and your session are kept on your device; the home-screen widget also stores a few dates to show its counters. On iPhone, so you can send a heart from the widget, a session key valid for at most one hour is shared with the widget in your device’s keychain. These are deleted when you uninstall the app.</p>
 </section>
 <section>
 <h2>How long we keep it</h2>
 <p>We keep your data for as long as your account exists. Some items — drawings, voice notes, instant photos and puzzles — are kept only for a period that depends on your plan; the app tells you what that period is, and older items are deleted automatically.</p>
 <p>When you delete your account, your data is removed from our live systems immediately. Copies may remain in encrypted backups for up to 30 days before they are overwritten.</p>
+<p>When a connection is ended, the shared space is closed at once and kept for 30 days in case the same two people reconnect; then it is deleted, files included. Either partner can choose to delete it immediately instead.</p>
 </section>
 <section>
 <h2>Your rights</h2>
@@ -88,7 +111,7 @@
 </section>
 <section>
 <h2>Deleting your account</h2>
-<p>You can delete your account at any time in <strong>Settings → Delete account</strong>. Because Lovena is shared by two people, this deletes <strong>both</strong> accounts and everything the couple created. The app says so clearly before it asks you to confirm. Full details, including how to ask for deletion without the app, are on the <a href="en/delete-account.html">account deletion page</a>.</p>
+<p>You can delete your account at any time in <strong>Settings → Delete account</strong>. This deletes your account and the space you shared with your partner — notes, photos, the garden and everything else you created together. Your partner keeps their own account. The app says so clearly before it asks you to confirm. If you only want to leave the relationship, <strong>Settings → End the connection</strong> closes the shared space without deleting your account. Full details, including how to ask for deletion without the app, are on the <a href="en/delete-account.html">account deletion page</a>.</p>
 </section>
 <section>
 <h2>Children</h2>

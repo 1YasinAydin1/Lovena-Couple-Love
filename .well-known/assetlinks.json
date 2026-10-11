@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.deepjoke.lovena",
+      "sha256_cert_fingerprints": [
+        "FB:9C:DF:0E:4D:3B:E7:2D:FF:4B:DE:E5:14:7D:CC:83:71:AD:3B:7E:7E:14:3F:BB:10:94:C5:EA:FF:6E:7D:C6",
+        "1E:0F:F2:FF:CD:7C:14:D9:0F:F2:5A:49:02:5C:BF:D8:83:EE:34:91:F1:9A:A9:F8:A1:78:6F:F9:F7:04:E5:37"
+      ]
+    }
+  }
+]

@@ -5,21 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Delete your Lovena account · Lovena</title>
 <meta name="color-scheme" content="light dark">
-<link rel="canonical" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/delete-account.html">
-<link rel="alternate" hreflang="en" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/en/delete-account.html">
-<link rel="alternate" hreflang="tr" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/tr/delete-account.html">
-<link rel="alternate" hreflang="x-default" href="https://1yasinaydin1.github.io/Lovena-Couple-Love/delete-account.html">
+<link rel="canonical" href="https://lovenaapp.com/delete-account.html">
+<link rel="alternate" hreflang="de" href="https://lovenaapp.com/de/delete-account.html">
+<link rel="alternate" hreflang="en" href="https://lovenaapp.com/en/delete-account.html">
+<link rel="alternate" hreflang="es" href="https://lovenaapp.com/es/delete-account.html">
+<link rel="alternate" hreflang="fr" href="https://lovenaapp.com/fr/delete-account.html">
+<link rel="alternate" hreflang="it" href="https://lovenaapp.com/it/delete-account.html">
+<link rel="alternate" hreflang="pt-BR" href="https://lovenaapp.com/pt-BR/delete-account.html">
+<link rel="alternate" hreflang="tr" href="https://lovenaapp.com/tr/delete-account.html">
+<link rel="alternate" hreflang="ko" href="https://lovenaapp.com/ko/delete-account.html">
+<link rel="alternate" hreflang="ja" href="https://lovenaapp.com/ja/delete-account.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://lovenaapp.com/zh-Hant/delete-account.html">
+<link rel="alternate" hreflang="x-default" href="https://lovenaapp.com/delete-account.html">
 <link rel="stylesheet" href="style.css">
 <script>
 (function () {
   try {
     if (location.search.indexOf('lang=') !== -1) return;
-    var supported = ["tr"];
+    var supported = ["de","es","fr","it","pt-BR","tr","ko","ja","zh-Hant"];
+    var lower = supported.map(function (c) { return c.toLowerCase(); });
     var wanted = (navigator.languages || [navigator.language || '']);
     for (var i = 0; i < wanted.length; i++) {
-      var code = String(wanted[i]).toLowerCase().split('-')[0];
-      if (code === "en") return;
-      if (supported.indexOf(code) !== -1) { location.replace(code + '/delete-account.html'); return; }
+      // Same order as the app's matchLanguage: full tag, then with trailing
+      // subtags dropped (zh-Hant-TW → zh-Hant, pt-BR), then the base language,
+      // then another variant of it (pt-PT → pt-BR, zh-Hans → zh-Hant).
+      var parts = String(wanted[i]).toLowerCase().split('-');
+      if (parts[0] === "en") return;
+      var tries = [];
+      for (var n = parts.length; n >= 1; n--) tries.push(parts.slice(0, n).join('-'));
+      if (parts[0] === 'zh' && /^(tw|hk|mo)$/.test(parts[1] || '')) tries.splice(1, 0, 'zh-hant');
+      if (parts[0] === 'pt') tries.push('pt-br');
+      if (parts[0] === 'zh') tries.push('zh-hant');
+      for (var j = 0; j < tries.length; j++) {
+        var at = lower.indexOf(tries[j]);
+        if (at !== -1) { location.replace(supported[at] + '/delete-account.html'); return; }
+      }
     }
   } catch (e) {}
 })();
@@ -29,10 +49,10 @@
 <main>
 <header>
   <a class="brand" href="en/index.html">Lovena</a>
-  <nav class="langs" aria-label="Language"><a href="en/delete-account.html" hreflang="en" aria-current="page">English</a><a href="tr/delete-account.html" hreflang="tr">Türkçe</a></nav>
+  <nav class="langs" aria-label="Language"><a href="de/delete-account.html" hreflang="de">Deutsch</a><a href="en/delete-account.html" hreflang="en" aria-current="page">English</a><a href="es/delete-account.html" hreflang="es">Español</a><a href="fr/delete-account.html" hreflang="fr">Français</a><a href="it/delete-account.html" hreflang="it">Italiano</a><a href="pt-BR/delete-account.html" hreflang="pt-BR">Português (Brasil)</a><a href="tr/delete-account.html" hreflang="tr">Türkçe</a><a href="ko/delete-account.html" hreflang="ko">한국어</a><a href="ja/delete-account.html" hreflang="ja">日本語</a><a href="zh-Hant/delete-account.html" hreflang="zh-Hant">繁體中文</a></nav>
 </header>
 <h1>Delete your Lovena account</h1>
-<p class="updated">Last updated: 27 September 2026</p>
+<p class="updated">Last updated: 1 October 2026</p>
 <p>This page explains how to delete your Lovena account and what happens to your data. Lovena is published on Google Play by <strong>Deepjoke Software</strong> and on the Apple App Store by <strong>Yasin Aydın</strong>.</p>
 <section>
 <h2>In the app</h2>
@@ -44,7 +64,7 @@
 </section>
 <section>
 <h2>What is deleted</h2>
-<p>Lovena is a shared space: every note, photo and garden belongs to two people. So deleting an account deletes <strong>both</strong> partners’ accounts and everything the couple created — profiles, notes, photos, voice notes, drawings, capsules, answers, the garden, dreams, map places, location data and notification tokens.</p>
+<p>Lovena is a shared space: every note, photo and garden belongs to two people. So deleting your account deletes, along with your own account and profile, everything the couple created — notes, photos, voice notes, drawings, capsules, answers, the garden, dreams, map places, location data and notification tokens. Your partner's account is <strong>not</strong> deleted; they are told the connection has ended.</p>
 <p>Data is removed from our live systems immediately. Copies may remain in encrypted backups for up to 30 days before they are overwritten.</p>
 </section>
 <section>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<title>Lovena</title>
+<style>
+:root {
+  --bg: #FAF8F7;
+  --surface: #FFFFFF;
+  --text: #241F1D;
+  --muted: #7A6E69;
+  --border: #E3DDDA;
+  --accent: #D94467;
+  --accent-soft: #FDF2F4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #241F1D;
+    --surface: color-mix(in srgb, #241F1D 88%, #FFFFFF);
+    --text: #FAF8F7;
+    --muted: #C9C0BC;
+    --border: #4A413D;
+    --accent: #EF9EB1;
+    --accent-soft: #471326;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+main { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: -0.01em; }
+nav.langs { display: flex; gap: 6px; flex-wrap: wrap; }
+nav.langs a { font-size: 14px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); text-decoration: none; }
+nav.langs a[aria-current] { background: var(--accent-soft); border-color: var(--accent); color: var(--text); }
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.02em; }
+h2 { font-size: 19px; margin: 36px 0 8px; }
+.updated { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+p, li { margin: 0 0 12px; }
+ul, ol { padding-left: 22px; margin: 0 0 12px; }
+a { color: var(--accent); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 24px; }
+.links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+main { max-width: 480px; text-align: center; padding-top: 56px; }
+.heart { font-size: 44px; margin-bottom: 8px; }
+.code { font-size: 34px; font-weight: 700; letter-spacing: 0.18em; margin: 8px 0 4px; }
+.label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+.btn { display: block; padding: 14px 18px; border-radius: 14px; text-decoration: none; font-weight: 600; margin: 10px 0; border: 1px solid var(--border); color: var(--text); background: var(--surface); cursor: pointer; font-size: 16px; width: 100%; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.or { color: var(--muted); font-size: 14px; margin: 24px 0 8px; }
+</style>
+</head>
+<body>
+<main id="root"></main>
+<script>
+(function () {
+  var all = {"de":{"title":"Du bist zu Lovena eingeladen 💞","body":"Dein Schatz lädt dich in eure private Welt ein: Notizen, Erinnerungen, ein gemeinsamer Garten.","open":"In Lovena öffnen","or":"Noch keine App? Lade sie herunter und gib dann diesen Code ein:","codeLabel":"Einladungscode","copy":"Code kopieren","copied":"Kopiert","notFound":"Diese Seite wurde nicht gefunden.","home":"Zur Startseite"},"en":{"title":"You’re invited to Lovena 💞","body":"Your partner is inviting you into a private space for the two of you: notes, memories, a shared garden.","open":"Open in Lovena","or":"Don’t have the app yet? Download it, then enter this code:","codeLabel":"Invite code","copy":"Copy code","copied":"Copied","notFound":"This page couldn’t be found.","home":"Go to the home page"},"es":{"title":"Te invitaron a Lovena 💞","body":"Tu pareja te invita a un espacio privado para los dos: notas, recuerdos y un jardín compartido.","open":"Abrir en Lovena","or":"¿Aún no tienes la app? Descárgala y luego escribe este código:","codeLabel":"Código de invitación","copy":"Copiar código","copied":"Copiado","notFound":"No encontramos esta página.","home":"Ir al inicio"},"fr":{"title":"Une invitation pour Lovena t’attend 💞","body":"Ta moitié t’invite dans votre espace privé à deux : mots doux, souvenirs, un jardin partagé.","open":"Ouvrir dans Lovena","or":"Pas encore l’app ? Télécharge-la, puis saisis ce code :","codeLabel":"Code d’invitation","copy":"Copier le code","copied":"Copié","notFound":"Page introuvable.","home":"Retour à l’accueil"},"it":{"title":"Hai un invito per Lovena 💞","body":"La tua metà ti invita nel vostro spazio privato: bigliettini, ricordi, un giardino condiviso.","open":"Apri in Lovena","or":"Non hai ancora l’app? Scaricala, poi inserisci questo codice:","codeLabel":"Codice invito","copy":"Copia codice","copied":"Copiato","notFound":"Pagina non trovata.","home":"Torna alla home"},"pt-BR":{"title":"Você recebeu um convite para o Lovena 💞","body":"Seu amor está te chamando para um espaço só de vocês dois: bilhetes, lembranças e um jardim compartilhado.","open":"Abrir no Lovena","or":"Ainda não tem o app? Baixe e depois digite este código:","codeLabel":"Código de convite","copy":"Copiar código","copied":"Copiado","notFound":"Não encontramos esta página.","home":"Ir para o início"},"tr":{"title":"Lovena'ya davet edildin 💞","body":"Partnerin seni ikinizin özel dünyasına çağırıyor: notlar, anılar, ortak bir bahçe.","open":"Lovena'da aç","or":"Uygulama yüklü değilse önce indir, sonra bu kodu gir:","codeLabel":"Davet kodu","copy":"Kodu kopyala","copied":"Kopyalandı","notFound":"Bu sayfa bulunamadı.","home":"Ana sayfaya dön"},"ko":{"title":"Lovena 초대가 도착했어요 💞","body":"연인이 두 사람만의 공간으로 초대하고 있어요. 쪽지, 추억, 함께 가꾸는 정원.","open":"Lovena에서 열기","or":"아직 앱이 없나요? 다운로드한 뒤 이 코드를 입력하세요:","codeLabel":"초대 코드","copy":"코드 복사","copied":"복사했어요","notFound":"페이지를 찾을 수 없어요.","home":"홈으로"},"ja":{"title":"Lovenaへの招待が届きました 💞","body":"大切な人が、ふたりだけの場所に招待しています。メモ、思い出、いっしょに育てる庭。","open":"Lovenaで開く","or":"まだアプリがない場合は、ダウンロードしてからこのコードを入力してください：","codeLabel":"招待コード","copy":"コードをコピー","copied":"コピーしました","notFound":"ページが見つかりませんでした。","home":"ホームへ"},"zh-Hant":{"title":"你收到了 Lovena 的邀請 💞","body":"另一半邀請你進入只屬於你們兩人的空間：紙條、回憶，還有一座共同的花園。","open":"在 Lovena 中開啟","or":"還沒有 App 嗎？下載後輸入這組邀請碼：","codeLabel":"邀請碼","copy":"複製邀請碼","copied":"已複製","notFound":"找不到這個頁面。","home":"回到首頁"}};
+  var fallback = "en";
+  var codes = Object.keys(all);
+  var lower = codes.map(function (c) { return c.toLowerCase(); });
+  function pick() {
+    var wanted = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < wanted.length; i++) {
+      var parts = String(wanted[i]).toLowerCase().split('-');
+      var tries = [];
+      for (var n = parts.length; n >= 1; n--) tries.push(parts.slice(0, n).join('-'));
+      if (parts[0] === 'zh' && /^(tw|hk|mo)$/.test(parts[1] || '')) tries.splice(1, 0, 'zh-hant');
+      if (parts[0] === 'pt') tries.push('pt-br');
+      if (parts[0] === 'zh') tries.push('zh-hant');
+      for (var j = 0; j < tries.length; j++) {
+        var at = lower.indexOf(tries[j]);
+        if (at !== -1) return codes[at];
+      }
+    }
+    return fallback;
+  }
+  var lang = pick();
+  var t = all[lang];
+  document.documentElement.lang = lang;
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var root = document.getElementById('root');
+  var match = location.pathname.match(/\/invite\/([A-Za-z0-9]{4,12})\/?$/);
+  if (!match) {
+    root.innerHTML = '<p>' + esc(t.notFound) + '</p><a class="btn" href="/">' + esc(t.home) + '</a>';
+    return;
+  }
+  var code = match[1].toUpperCase();
+  root.innerHTML =
+    '<div class="heart">💞</div>' +
+    '<h1>' + esc(t.title) + '</h1>' +
+    '<p>' + esc(t.body) + '</p>' +
+    '<a class="btn primary" href="lovena://invite/' + code + '">' + esc(t.open) + '</a>' +
+    '<p class="or">' + esc(t.or) + '</p>' +
+    '<div class="label">' + esc(t.codeLabel) + '</div>' +
+    '<div class="code">' + code + '</div>' +
+    '<button class="btn" id="copy" type="button">' + esc(t.copy) + '</button>' +
+    '<a class="btn" href="https://apps.apple.com/app/id6800462085">App Store</a>' +
+    '<a class="btn" href="https://play.google.com/store/apps/details?id=com.deepjoke.lovena">Google Play</a>';
+  document.getElementById('copy').addEventListener('click', function () {
+    var button = this;
+    function done() { button.textContent = t.copied; }
+    if (navigator.clipboard) navigator.clipboard.writeText(code).then(done, done);
+    else done();
+  });
+})();
+</script>
+</body>
+</html>

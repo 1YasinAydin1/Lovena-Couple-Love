@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "543CKX45CP.com.deepjoke.lovena"
+        ],
+        "components": [
+          {
+            "/": "/invite/*"
+          }
+        ]
+      }
+    ]
+  }
+}
