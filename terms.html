@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms &amp; Conditions · Lovena</title>
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://lovenaapp.com/terms.html">
+<link rel="alternate" hreflang="de" href="https://lovenaapp.com/de/terms.html">
+<link rel="alternate" hreflang="en" href="https://lovenaapp.com/en/terms.html">
+<link rel="alternate" hreflang="es" href="https://lovenaapp.com/es/terms.html">
+<link rel="alternate" hreflang="fr" href="https://lovenaapp.com/fr/terms.html">
+<link rel="alternate" hreflang="it" href="https://lovenaapp.com/it/terms.html">
+<link rel="alternate" hreflang="pt-BR" href="https://lovenaapp.com/pt-BR/terms.html">
+<link rel="alternate" hreflang="tr" href="https://lovenaapp.com/tr/terms.html">
+<link rel="alternate" hreflang="ko" href="https://lovenaapp.com/ko/terms.html">
+<link rel="alternate" hreflang="ja" href="https://lovenaapp.com/ja/terms.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://lovenaapp.com/zh-Hant/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://lovenaapp.com/terms.html">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    if (location.search.indexOf('lang=') !== -1) return;
+    var supported = ["de","es","fr","it","pt-BR","tr","ko","ja","zh-Hant"];
+    var lower = supported.map(function (c) { return c.toLowerCase(); });
+    var wanted = (navigator.languages || [navigator.language || '']);
+    for (var i = 0; i < wanted.length; i++) {
+      // Same order as the app's matchLanguage: full tag, then with trailing
+      // subtags dropped (zh-Hant-TW → zh-Hant, pt-BR), then the base language,
+      // then another variant of it (pt-PT → pt-BR, zh-Hans → zh-Hant).
+      var parts = String(wanted[i]).toLowerCase().split('-');
+      if (parts[0] === "en") return;
+      var tries = [];
+      for (var n = parts.length; n >= 1; n--) tries.push(parts.slice(0, n).join('-'));
+      if (parts[0] === 'zh' && /^(tw|hk|mo)$/.test(parts[1] || '')) tries.splice(1, 0, 'zh-hant');
+      if (parts[0] === 'pt') tries.push('pt-br');
+      if (parts[0] === 'zh') tries.push('zh-hant');
+      for (var j = 0; j < tries.length; j++) {
+        var at = lower.indexOf(tries[j]);
+        if (at !== -1) { location.replace(supported[at] + '/terms.html'); return; }
+      }
+    }
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<main>
+<header>
+  <a class="brand" href="en/index.html">Lovena</a>
+  <nav class="langs" aria-label="Language"><a href="de/terms.html" hreflang="de">Deutsch</a><a href="en/terms.html" hreflang="en" aria-current="page">English</a><a href="es/terms.html" hreflang="es">Español</a><a href="fr/terms.html" hreflang="fr">Français</a><a href="it/terms.html" hreflang="it">Italiano</a><a href="pt-BR/terms.html" hreflang="pt-BR">Português (Brasil)</a><a href="tr/terms.html" hreflang="tr">Türkçe</a><a href="ko/terms.html" hreflang="ko">한국어</a><a href="ja/terms.html" hreflang="ja">日本語</a><a href="zh-Hant/terms.html" hreflang="zh-Hant">繁體中文</a></nav>
+</header>
+<h1>Terms &amp; Conditions</h1>
+<p class="updated">Last updated: 17 October 2026</p>
+<p>By using Lovena you agree to the following. We have kept it short.</p>
+<section>
+<h2>Your account</h2>
+<p>You must be over 13 to create an account. You are responsible for the accuracy of what you tell us and for keeping your password safe.</p>
+</section>
+<section>
+<h2>Matching</h2>
+<p>Lovena is for two. An account can be matched with only one person at a time. Whoever you share your invite code with will see all of your shared content once you match.</p>
+</section>
+<section>
+<h2>Your content is yours</h2>
+<p>Everything you write, take and record belongs to you. We store it only in order to show it to you and your partner, and for no other purpose.</p>
+</section>
+<section>
+<h2>What is not allowed</h2>
+<p>Uploading someone else's content without permission, storing unlawful content, abusing the service, or accessing it with automated tools. We have zero tolerance for abuse: anything reported through Settings → Report abuse is reviewed within 24 hours, and accounts that break these rules can be closed.</p>
+</section>
+<section>
+<h2>Premium</h2>
+<p>Some features require a paid membership. Payment and cancellation run through the store you downloaded the app from, and refunds follow that store's rules.</p>
+</section>
+<section>
+<h2>The service</h2>
+<p>We are still building this, so features may change. We will try to announce planned downtime, but we cannot guarantee uninterrupted service.</p>
+</section>
+<section>
+<h2>Closing an account</h2>
+<p>You can end a connection or delete your account at any time. Ending a connection closes the shared space and keeps it for 30 days in case you reconnect. Deleting your account also deletes the space you shared; your partner keeps their own account. We may close an account for serious breaches of these terms.</p>
+</section>
+<section>
+<h2>Liability</h2>
+<p>Lovena is not a backup service. We recommend keeping your own copy of photos and recordings that matter to you.</p>
+</section>
+<footer>Questions? Write to us at <a href="mailto:lovenacouple@gmail.com">lovenacouple@gmail.com</a>.</footer>
+</main>
+</body>
+</html>
