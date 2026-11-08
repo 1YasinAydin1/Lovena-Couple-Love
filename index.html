@@ -1,22 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lovena — a private space for two</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lovena — a little world for the two of you</title>
+<meta name="description" content="Lovena is a private app for couples: love notes, a garden you grow together, a question every day, games for two, your memories and special days. Only the two of you can see it.">
 <meta name="color-scheme" content="light dark">
-<link rel="canonical" href="https://lovenaapp.com/index.html">
-<link rel="alternate" hreflang="de" href="https://lovenaapp.com/de/index.html">
-<link rel="alternate" hreflang="en" href="https://lovenaapp.com/en/index.html">
-<link rel="alternate" hreflang="es" href="https://lovenaapp.com/es/index.html">
-<link rel="alternate" hreflang="fr" href="https://lovenaapp.com/fr/index.html">
-<link rel="alternate" hreflang="it" href="https://lovenaapp.com/it/index.html">
-<link rel="alternate" hreflang="pt-BR" href="https://lovenaapp.com/pt-BR/index.html">
-<link rel="alternate" hreflang="tr" href="https://lovenaapp.com/tr/index.html">
-<link rel="alternate" hreflang="ko" href="https://lovenaapp.com/ko/index.html">
-<link rel="alternate" hreflang="ja" href="https://lovenaapp.com/ja/index.html">
-<link rel="alternate" hreflang="zh-Hant" href="https://lovenaapp.com/zh-Hant/index.html">
-<link rel="alternate" hreflang="x-default" href="https://lovenaapp.com/index.html">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181514" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://lovenaapp.com/">
+<link rel="alternate" hreflang="de" href="https://lovenaapp.com/de/">
+<link rel="alternate" hreflang="en" href="https://lovenaapp.com/en/">
+<link rel="alternate" hreflang="es" href="https://lovenaapp.com/es/">
+<link rel="alternate" hreflang="fr" href="https://lovenaapp.com/fr/">
+<link rel="alternate" hreflang="it" href="https://lovenaapp.com/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://lovenaapp.com/pt-BR/">
+<link rel="alternate" hreflang="tr" href="https://lovenaapp.com/tr/">
+<link rel="alternate" hreflang="ko" href="https://lovenaapp.com/ko/">
+<link rel="alternate" hreflang="ja" href="https://lovenaapp.com/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://lovenaapp.com/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://lovenaapp.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lovena">
+<meta property="og:title" content="Lovena — a little world for the two of you">
+<meta property="og:description" content="Lovena is a private app for couples: love notes, a garden you grow together, a question every day, games for two, your memories and special days. Only the two of you can see it.">
+<meta property="og:url" content="https://lovenaapp.com/">
+<meta property="og:image" content="https://lovenaapp.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lovena’s garden: flowers along a wooden fence, a rainbow, two hot-air balloons and a little dog.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script>
 (function () {
@@ -38,28 +65,270 @@
       if (parts[0] === 'zh') tries.push('zh-hant');
       for (var j = 0; j < tries.length; j++) {
         var at = lower.indexOf(tries[j]);
-        if (at !== -1) { location.replace(supported[at] + '/index.html'); return; }
+        if (at !== -1) { location.replace(supported[at] + '/index.html' + location.hash); return; }
       }
     }
   } catch (e) {}
 })();
 </script>
 </head>
-<body>
-<main>
-<header>
-  <a class="brand" href="en/index.html">Lovena</a>
-  <nav class="langs" aria-label="Language"><a href="de/index.html" hreflang="de">Deutsch</a><a href="en/index.html" hreflang="en" aria-current="page">English</a><a href="es/index.html" hreflang="es">Español</a><a href="fr/index.html" hreflang="fr">Français</a><a href="it/index.html" hreflang="it">Italiano</a><a href="pt-BR/index.html" hreflang="pt-BR">Português (Brasil)</a><a href="tr/index.html" hreflang="tr">Türkçe</a><a href="ko/index.html" hreflang="ko">한국어</a><a href="ja/index.html" hreflang="ja">日本語</a><a href="zh-Hant/index.html" hreflang="zh-Hant">繁體中文</a></nav>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="en/"><img src="assets/img/icon-96.webp" width="34" height="34" alt=""><span>Lovena</span></a>
+    <nav class="head-nav" aria-label="Lovena">
+      <a href="#inside">Inside Lovena</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <details class="lang-menu">
+  <summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>English</span></summary>
+  <ul><li><a href="de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="en/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="es/" hreflang="es" lang="es">Español</a></li><li><a href="fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="it/" hreflang="it" lang="it">Italiano</a></li><li><a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="tr/" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li></ul>
+</details>
+  </div>
 </header>
-<h1>A private space for two.</h1>
-<p>Lovena is a companion app for couples: notes, memories, photos, a garden you grow together, games, dreams and the dates that matter to you. Only the two of you can see it.</p>
-<p>Lovena is coming soon to the App Store and Google Play.</p>
-<div class="links">
-  <a href="en/privacy.html">Privacy Policy</a>
-  <a href="en/terms.html">Terms &amp; Conditions</a>
-  <a href="en/delete-account.html">Delete your account</a>
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">just the two of you</p>
+      <h1 class="display">A little world, <span class="accent">built by two.</span></h1>
+      <p class="lead">Notes that land on their home screen, a garden you water together, a question every evening, games for two and every day worth remembering. Private, warm, and only yours.</p>
+      <div class="stores is-soon">
+  <p class="soon-note">Coming soon to the App Store and Google Play</p>
+  <div class="store-row">
+    <span class="store-btn" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg><span><small>Soon</small><b>App Store</b></span></span>
+    <span class="store-btn" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5v15l13-7.5z"/></svg><span><small>Soon</small><b>Google Play</b></span></span>
+  </div>
 </div>
-<footer>Questions? Write to us at <a href="mailto:lovenacouple@gmail.com">lovenacouple@gmail.com</a>.</footer>
+      <ul class="trust"><li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.4 3 5 6.4 5c2 0 3.5 1.1 4.3 2.5h2.6C14.1 6.1 15.6 5 17.6 5 21 5 23 8.4 21.6 11.7 19.5 16.4 12 21 12 21z"/></svg>Only you two</li><li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.4 3 5 6.4 5c2 0 3.5 1.1 4.3 2.5h2.6C14.1 6.1 15.6 5 17.6 5 21 5 23 8.4 21.6 11.7 19.5 16.4 12 21 12 21z"/></svg>No ads</li><li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.4 3 5 6.4 5c2 0 3.5 1.1 4.3 2.5h2.6C14.1 6.1 15.6 5 17.6 5 21 5 23 8.4 21.6 11.7 19.5 16.4 12 21 12 21z"/></svg>10 languages</li></ul>
+    </div>
+    <div class="hero-visual">
+      <img class="balloon b1" src="assets/img/balloon-6.webp" width="220" height="310" alt="">
+      <picture class="shot hero-shot">
+  <source type="image/webp" srcset="assets/img/en/home-480.webp 480w, assets/img/en/home-800.webp 800w" sizes="(min-width: 900px) 340px, 72vw">
+  <img src="assets/img/en/home-640.jpg" width="640" height="1120" alt="The Lovena home screen: your days together, a love note and the latest photo." fetchpriority="high" decoding="async">
+</picture>
+      <img class="balloon b2" src="assets/img/balloon-12.webp" width="220" height="304" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="section inside" id="inside" aria-label="Inside Lovena">
+  <div class="wrap">
+    <div class="garden-window">
+      <picture>
+        <source media="(max-width: 640px)" type="image/webp" srcset="assets/img/garden-m-800.webp">
+        <source media="(max-width: 640px)" srcset="assets/img/garden-m-800.jpg">
+        <source type="image/webp" srcset="assets/img/garden-1000.webp 1000w, assets/img/garden-1800.webp 1800w" sizes="(min-width: 1140px) 1100px, 100vw">
+        <img src="assets/img/garden-1400.jpg" width="1800" height="772" alt="Lovena’s garden: flowers along a wooden fence, a rainbow, two hot-air balloons and a little dog." loading="lazy" decoding="async">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="section feature tint-garden" id="garden" aria-labelledby="h-garden">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M12 11v10M12 17c-3 0-5-2-5-4 2.5 0 5 1.5 5 4zM12 15c3 0 5-2 5-4-2.5 0-5 1.5-5 4z"/></svg>Our Garden</p>
+      <h2 class="h2" id="h-garden">A garden that grows when you both show up</h2>
+      <p class="body">Plant a flower, water it together and watch it open over the days. A little companion lives there too, happier every day you both stop by.</p>
+      <ul class="points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Flowers bloom with care from both of you</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>A pet companion whose bond grows with yours</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Picked flowers fill your shared vase</span></li></ul>
+    </div>
+    <figure class="feature-visual">
+      <picture class="shot">
+  <source type="image/webp" srcset="assets/img/en/garden-480.webp 480w, assets/img/en/garden-800.webp 800w" sizes="(min-width: 900px) 330px, 66vw">
+  <img src="assets/img/en/garden-640.jpg" width="640" height="1120" alt="The garden screen: flowers, a rainbow, a hot-air balloon and the little dog." loading="lazy" decoding="async">
+</picture>
+      
+    </figure>
+  </div>
+</section>
+<section class="section feature tint-notes" id="notes" aria-labelledby="h-notes">
+  <div class="wrap feature-grid reverse">
+    <div class="feature-copy">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></svg>Love Notes &amp; Drawing</p>
+      <h2 class="h2" id="h-notes">Small words, right where they’ll see them</h2>
+      <p class="body">Write a love note and it appears on their screen. Draw something with brushes, stickers and frames, send a voice note or a quick photo of your day.</p>
+      <ul class="points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Notes and drawings show up on the widget</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Voice notes and instant photos</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Draw for each other, or draw together</span></li></ul>
+    </div>
+    <figure class="feature-visual">
+      <picture class="shot">
+  <source type="image/webp" srcset="assets/img/en/drawing-480.webp 480w, assets/img/en/drawing-800.webp 800w" sizes="(min-width: 900px) 330px, 66vw">
+  <img src="assets/img/en/drawing-640.jpg" width="640" height="1120" alt="A drawing with a heart and both initials, ready to send." loading="lazy" decoding="async">
+</picture>
+      <p class="note" aria-hidden="true">Thinking of you ☀️</p>
+    </figure>
+  </div>
+</section>
+<section class="section feature tint-talk" id="talk" aria-labelledby="h-talk">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Daily Question &amp; Talk</p>
+      <h2 class="h2" id="h-talk">One question a day, and the talks you keep putting off</h2>
+      <p class="body">Answer the daily question on your own, then see what they wrote. Conversation packs open one question a day, from deep talks to dreams, money, roots and gratitude.</p>
+      <ul class="points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Write your answer to see theirs</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Packs that open a new day at a time</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>A 30-day program to grow closer</span></li></ul>
+    </div>
+    <figure class="feature-visual">
+      <picture class="shot">
+  <source type="image/webp" srcset="assets/img/en/together-480.webp 480w, assets/img/en/together-800.webp 800w" sizes="(min-width: 900px) 330px, 66vw">
+  <img src="assets/img/en/together-640.jpg" width="640" height="1120" alt="The Together screen with today’s three small rituals, games and conversation packs." loading="lazy" decoding="async">
+</picture>
+      
+    </figure>
+  </div>
+</section>
+
+<section class="section tint-games" id="games" aria-labelledby="h-games">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="18" height="11" rx="5"/><path d="M8 10.5v4M6 12.5h4M15.5 12h.01M18 13.5h.01"/></svg>Games for two</p>
+      <h2 class="h2" id="h-games">Play together, even from two cities</h2>
+      <p class="body">Short games made for two phones: some to learn more about each other, some where you only win as a team.</p>
+    </div>
+    <ul class="games-grid" role="list" style="list-style:none;padding:0;margin:0">
+      <li class="game" style="--g: #16A34A"><span class="game-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-7M12 14L6 6M12 14l6-8M3 7l3-1 1 3M21 7l-3-1-1 3"/></svg></span><div><h3>This or That</h3><p>Quick choices, surprising answers.</p></div></li>
+      <li class="game" style="--g: #D94467"><span class="game-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.6v.4M12 17h.01"/></svg></span><div><h3>Couple Quiz</h3><p>How well do you really know each other?</p></div></li>
+      <li class="game" style="--g: #0D9488"><span class="game-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4H4v-4a2 2 0 1 0 0-4z"/></svg></span><div><h3>Love Puzzle</h3><p>Turn a photo into a puzzle for them to solve.</p></div></li>
+      <li class="game" style="--g: #6366F1"><span class="game-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="15" width="12" height="5" rx="1.2"/><rect x="7.5" y="9.5" width="9" height="5" rx="1.2"/><rect x="9" y="4" width="6" height="5" rx="1.2"/></svg></span><div><h3>Tower Together</h3><p>Take turns stacking floors as high as you dare.</p></div></li>
+      <li class="game" style="--g: #F97316"><span class="game-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h5v5H4zM9 14h5v5H9zM9 9h5v5H9z"/><path d="M17 5a3 3 0 0 1 3 3l1.5-1.5M20 8l-1.5-1.5" stroke-linecap="round"/></svg></span><div><h3>Two Hands</h3><p>One board: one of you moves, the other turns.</p></div></li>
+      <li class="game" style="--g: #F59E0B"><span class="game-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 17a6 6 0 0 1 12 0M3 17h18M12 5v3M5 9l2 2M19 9l-2 2M8 20h8"/></svg></span><div><h3>Meet at Dawn</h3><p>Day and Night guide each other through twenty levels.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section feature tint-memories" id="memories" aria-labelledby="h-memories">
+  <div class="wrap feature-grid reverse">
+    <div class="feature-copy">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>Memories &amp; Special Days</p>
+      <h2 class="h2" id="h-memories">Your story, kept in one place</h2>
+      <p class="body">Albums, a timeline and a love map of everywhere you have been. Seal a time capsule for a future date, and never miss an anniversary again.</p>
+      <ul class="points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Albums, timeline and love map</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Time capsules that open on the day you choose</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Countdowns to birthdays and anniversaries</span></li></ul>
+    </div>
+    <figure class="feature-visual">
+      <picture class="shot">
+  <source type="image/webp" srcset="assets/img/en/memories-480.webp 480w, assets/img/en/memories-800.webp 800w" sizes="(min-width: 900px) 330px, 66vw">
+  <img src="assets/img/en/memories-640.jpg" width="640" height="1120" alt="The memories screen with a timeline, a love map and photo albums." loading="lazy" decoding="async">
+</picture>
+      
+    </figure>
+  </div>
+</section>
+<section class="section feature tint-distance" id="distance" aria-labelledby="h-distance">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="17" r="2"/><circle cx="19" cy="7" r="2"/><path d="M7 16c4-1 2-7 6-8s3-1 4-1" stroke-dasharray="2 3"/></svg>Long Distance</p>
+      <h2 class="h2" id="h-distance">Miles apart, still side by side</h2>
+      <p class="body">See each other’s city, the distance between you, the local time and the weather, and count down to the day you meet again.</p>
+      <ul class="points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Both clocks and both skies on one card</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Only the city is shared, never the exact spot</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>A countdown to your next hello</span></li></ul>
+    </div>
+    <figure class="feature-visual">
+      <picture class="shot">
+  <source type="image/webp" srcset="assets/img/en/distance-480.webp 480w, assets/img/en/distance-800.webp 800w" sizes="(min-width: 900px) 330px, 66vw">
+  <img src="assets/img/en/distance-640.jpg" width="640" height="1120" alt="Long distance mode: a map between two cities, both local times and the weather, and a countdown." loading="lazy" decoding="async">
+</picture>
+      
+    </figure>
+  </div>
+</section>
+<section class="section feature tint-widgets" id="widgets" aria-labelledby="h-widgets">
+  <div class="wrap feature-grid reverse">
+    <div class="feature-copy">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2.5"/><rect x="13" y="3" width="8" height="8" rx="2.5"/><rect x="3" y="13" width="8" height="8" rx="2.5"/><rect x="13" y="13" width="8" height="8" rx="2.5"/></svg>Widgets</p>
+      <h2 class="h2" id="h-widgets">Always on your home screen</h2>
+      <p class="body">Their latest note, a photo, your days together, the daily question and your garden, all at a glance on iPhone and Android.</p>
+      <ul class="points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Widgets for iOS and Android</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Drawings arrive straight on the widget</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><span>Your days together, counted at a glance</span></li></ul>
+    </div>
+    <figure class="feature-visual">
+      <picture class="shot">
+  <source type="image/webp" srcset="assets/img/en/widgets-480.webp 480w, assets/img/en/widgets-800.webp 800w" sizes="(min-width: 900px) 330px, 66vw">
+  <img src="assets/img/en/widgets-640.jpg" width="640" height="1120" alt="Home-screen widgets: days together, a love note, the daily question, a drawing, a photo and the garden." loading="lazy" decoding="async">
+</picture>
+      
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="privacy" aria-labelledby="h-privacy">
+  <div class="wrap">
+    <div class="promise">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2"/></svg>Our promise</p>
+        <h2 class="h2" id="h-privacy">Private by design. Only the two of you.</h2>
+        <p class="body">Lovena is not a social network. There is no feed, no followers and nobody else in the room.</p>
+      </div>
+      <ul class="promise-grid" role="list" style="list-style:none;padding:0">
+        <li class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2"/></svg><h3>Only you two</h3><p>Everything you share is visible to the two of you and no one else.</p></li>
+        <li class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><h3>No ads</h3><p>Lovena is paid for by the people who love it, not by advertisers.</p></li>
+        <li class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke-linecap="round"/></svg><h3>Never sold</h3><p>Your data is never sold or handed to anyone for profit.</p></li>
+        <li class="promise-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M4 20L20 4"/></svg><h3>Not for AI training</h3><p>Your notes, photos and answers are never used to train AI.</p></li>
+      </ul>
+      <p class="more"><a href="en/privacy.html">Read the privacy policy →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="h-faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Questions</p>
+      <h2 class="h2" id="h-faq">Good to know</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>Is Lovena free?</summary><p>Yes. Lovena is free to download and to use together every day. Plus and Gold are optional, and one subscription covers both of you.</p></details>
+      <details><summary>What do Plus and Gold add?</summary><p>More of everything you already love: more conversation packs and games, more flowers and vases for your garden, and more room to keep your photos, voice notes and memories for longer. Gold is the most generous.</p></details>
+      <details><summary>Does my partner need the app too?</summary><p>Yes, Lovena is made for two phones. One of you creates your space and sends an invite link or code; the other joins with it. iPhone and Android pair just fine.</p></details>
+      <details><summary>What happens to our data if we delete our account?</summary><p>Your account is deleted straight away. What you made together is kept for 30 days so the other person can download it, then it is erased for good, files included.</p></details>
+      <details><summary>Which languages does Lovena speak?</summary><p>Ten so far: Deutsch, English, Español, Français, Italiano, Português (Brasil), Türkçe, 한국어, 日本語, 繁體中文. Each of you can use the app in your own language.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="h-cta" style="padding-top:0">
+  <div class="wrap">
+    <div class="closing on-deep">
+      <img class="balloon b1" src="assets/img/balloon-6.webp" width="220" height="310" alt="" loading="lazy">
+      <img class="balloon b2" src="assets/img/balloon-12.webp" width="220" height="304" alt="" loading="lazy">
+      <h2 class="h2" id="h-cta">Your world for two is almost ready</h2>
+      <p class="body">Lovena arrives on iPhone and Android very soon.</p>
+      <div class="stores is-soon">
+  <p class="soon-note">Coming soon to the App Store and Google Play</p>
+  <div class="store-row">
+    <span class="store-btn" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg><span><small>Soon</small><b>App Store</b></span></span>
+    <span class="store-btn" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5v15l13-7.5z"/></svg><span><small>Soon</small><b>Google Play</b></span></span>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
 </main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="en/"><img src="assets/img/icon-96.webp" width="34" height="34" alt="" loading="lazy"><span>Lovena</span></a>
+        <p>A private space for two.</p>
+      </div>
+      <nav aria-labelledby="foot-legal-en">
+        <h2 id="foot-legal-en">Legal</h2>
+        <ul>
+          <li><a href="en/privacy.html">Privacy Policy</a></li>
+          <li><a href="en/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="en/delete-account.html">Delete your account</a></li>
+          <li><a href="mailto:lovenacouple@gmail.com">Contact: lovenacouple@gmail.com</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="foot-langs-en">
+        <h2 id="foot-langs-en">Languages</h2>
+        <ul class="langs"><li><a href="de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="en/" hreflang="en" lang="en" aria-current="page">English</a></li><li><a href="es/" hreflang="es" lang="es">Español</a></li><li><a href="fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="it/" hreflang="it" lang="it">Italiano</a></li><li><a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="tr/" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li></ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Lovena</span>
+      <span>Made with care for couples everywhere.</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
